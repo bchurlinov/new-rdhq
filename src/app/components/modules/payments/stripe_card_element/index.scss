@@ -1,0 +1,15 @@
+.card-section {
+    width: 100%;
+    max-width: 100%;
+
+    &__label {
+        font-weight: 300;
+        margin-bottom: 0.7rem;
+        position: relative;
+        left: 2px;
+        display: block;
+        text-align: left;
+        font-size: 1.3rem;
+        user-select: none;
+    }
+}

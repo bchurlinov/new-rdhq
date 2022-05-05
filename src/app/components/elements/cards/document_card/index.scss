@@ -1,0 +1,108 @@
+@import "app/styles/variables.scss";
+@import "app/styles/mixins.scss";
+@import "app/styles/extends.scss";
+@import "app/styles/animations.scss";
+
+.documents-templates-card {
+    display: flex;
+    flex-flow: column wrap;
+    background: #ffffff;
+    @include box-shadow-light();
+    @include border-radius(0.5rem);
+    @include animation(0, 1s, cardEnterAnimation, forwards);
+    @extend %card-border;
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 20rem;
+        max-height: 20rem;
+        border-bottom: 1px solid $grey-350;
+        -webkit-border-top-right-radius: 5px;
+        -moz-border-top-right-radius: 5px;
+        border-top-right-radius: 5px;
+        -webkit-border-top-left-radius: 5px;
+        -moz-border-top-left-radius: 5px;
+        border-top-left-radius: 5px;
+
+        figure {
+            margin: 0;
+            border: 1px solid $grey-300;
+            padding: 2rem;
+            @include border-radius(50%);
+            @include box-shadow();
+        }
+
+        img {
+            width: 7rem;
+            height: 7rem;
+            object-fit: cover;
+            -webkit-top-left-radius: 5px;
+            -moz-top-right-radius: 5px;
+            border-top-left-radius: 5px;
+            -webkit-top-right-radius: 5px;
+            -moz-top-right-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+    }
+
+    &__information {
+        padding: 2.5rem;
+        padding-bottom: 0;
+        flex-grow: 1;
+
+        h5 {
+            @extend %card-header;
+        }
+
+        h6 {
+            @extend %card-sub-header;
+        }
+
+        p {
+            @extend %card-description;
+        }
+    }
+
+    &__information-cta {
+        padding: 2.5rem;
+
+        a {
+            display: inline-block;
+            font-size: 1.5rem;
+
+            &:first-of-type {
+                color: $primary-color;
+                margin-right: 2rem;
+
+                &:hover {
+                    text-decoration: underline;
+                    color: $primary-hover;
+                }
+            }
+
+            &:last-of-type {
+                &:hover {
+                    text-decoration: underline;
+                    color: $primary-hover;
+                }
+            }
+        }
+
+        [data-type="help"] {
+            color: #a8a8a8;
+        }
+    }
+}
+
+.load-image {
+    opacity: 0;
+    @include transform(scale(0.95));
+    @include transition-3;
+
+    &.image-loaded {
+        @include transform(scale(1));
+        opacity: 1;
+    }
+}

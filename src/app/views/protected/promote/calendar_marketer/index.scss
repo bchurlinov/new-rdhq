@@ -1,0 +1,40 @@
+@import "app/styles/variables.scss";
+@import "app/styles/mixins.scss";
+@import "app/styles/animations.scss";
+
+.race-marketer {
+    @include animation(0, 0.8s, fadeIn, ease-in);
+
+    h1 {
+        margin-bottom: 1.25rem !important;
+    }
+
+    &__wrap {
+        width: 100%;
+        max-width: 100rem;
+        @include animation(0, 0.8s, fadeIn, ease-in);
+    }
+
+    &__race-details {
+        color: $primary-color;
+        @include transition-1;
+
+        &:hover {
+            color: $primary-hover;
+            text-decoration: underline;
+        }
+    }
+
+    &__no-race {
+        margin-top: 3rem;
+    }
+
+    &__no-curent-race {
+        margin-top: 3rem;
+    }
+
+    &__error {
+        margin-top: 3.5rem;
+        @include animation(0, 0.8s, fadeIn, ease-in);
+    }
+}

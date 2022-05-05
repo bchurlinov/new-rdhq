@@ -1,0 +1,112 @@
+@import "app/styles/mixins";
+@import "app/styles/variables.scss";
+
+.rdhq-modal {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.4);
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    opacity: 0;
+    z-index: -1;
+    @include transition-3;
+
+    &.isVisible {
+        opacity: 1;
+        z-index: 1000;
+    }
+
+    &__header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        background: $grey-350;
+        padding: 2rem 2.5rem;
+
+        h2 {
+            margin-bottom: 0 !important;
+            font-size: 1.85rem !important;
+            font-weight: 400;
+            text-align: center;
+
+            @media (max-width: $md) {
+                text-align: left;
+                font-size: 1.65rem !important;
+            }
+        }
+
+        @media (max-width: $md) {
+            padding: 2rem;
+        }
+    }
+
+    &__wrap {
+        width: 100%;
+        max-width: 65rem;
+        height: auto;
+        background: #ffffff;
+        opacity: 0;
+        position: relative;
+        overflow: hidden;
+        @include transition-3;
+        @include transform(scale(0));
+        @include border-radius(0.5rem);
+
+        &.isVisible {
+            opacity: 1;
+            @include transform(scale(1));
+        }
+
+        @media (max-width: $md) {
+            width: 95%;
+        }
+    }
+
+    &__close {
+        cursor: pointer;
+
+        svg {
+            display: inline-block;
+            font-size: 1.35rem;
+            color: $text-primary;
+        }
+    }
+
+    &__content {
+        padding: 2.75rem 2.5rem;
+        overflow: auto;
+        max-height: 45rem;
+
+        @media (max-width: $md) {
+            padding: 2rem;
+        }
+    }
+
+    &__footer {
+        padding: 1rem 2.5rem;
+        border-top: 1px solid $grey-350;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-end;
+    }
+
+    &__footer-cta {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        button {
+            &:first-of-type {
+                margin-right: 1.25rem;
+            }
+
+            &.ghost {
+                font-size: 1.25rem;
+            }
+        }
+    }
+}

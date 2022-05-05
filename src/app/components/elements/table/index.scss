@@ -1,0 +1,99 @@
+@import "app/styles/variables.scss";
+@import "app/styles/mixins.scss";
+
+.chakra-table {
+    border-collapse: collapse;
+    border-style: hidden;
+    box-shadow: 0 0 0 1px $grey-250;
+    overflow: hidden;
+    @include border-radius(0.5rem);
+
+    thead {
+        background: $grey-100;
+    }
+
+    tr {
+        &:nth-child(even) {
+            background: $grey-100;
+        }
+    }
+
+    th {
+        padding: 1.75rem;
+        text-align: left;
+        font-size: 1.75rem;
+        line-height: 1.75rem;
+        color: $text-primary;
+        text-transform: capitalize;
+        font-weight: 600;
+    }
+
+    td {
+        text-align: left;
+        font-size: 1.45rem;
+        color: $text-primary;
+        padding-inline-start: 1.75rem;
+        padding-inline-end: 1.75rem;
+        padding-top: 1.75rem;
+        padding-bottom: 1.75rem;
+        line-height: 1.25rem;
+        border-color: $grey-200;
+    }
+}
+
+.responsiveTable td .tdBefore {
+    display: none;
+}
+
+@media screen and (max-width: $lg) {
+    /*
+      Force table elements to not behave like tables anymore
+      Hide table headers (but not display: none; for accessibility)
+    */
+
+    .responsiveTable table,
+    .responsiveTable thead,
+    .responsiveTable tbody,
+    .responsiveTable th,
+    .responsiveTable td,
+    .responsiveTable tr {
+        display: block;
+    }
+
+    .responsiveTable thead tr {
+        // position: absolute;
+        // top: -9999px;
+        // left: -9999px;
+        display: none;
+    }
+
+    .responsiveTable td.pivoted {
+        /* Behave like a "row" */
+
+        border: none !important;
+        position: relative;
+        padding-left: calc(50% + 10px) !important;
+        text-align: left !important;
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        // border-bottom: 1px solid lightgrey !important;
+
+        &:first-of-type {
+            background: $grey-250;
+        }
+    }
+
+    .responsiveTable td .tdBefore {
+        /* Now like a table header */
+        position: absolute;
+        display: block;
+
+        /* Top/left values mimic padding */
+        left: 1rem;
+        width: calc(50% - 20px);
+        white-space: pre-wrap;
+        overflow-wrap: break-word;
+        text-align: left !important;
+        font-weight: 600;
+    }
+}

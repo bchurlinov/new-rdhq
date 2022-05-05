@@ -1,0 +1,39 @@
+@import "app/styles/variables.scss";
+
+.races {
+    &__top {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__top-item {
+        button {
+            svg {
+                display: inline-block;
+                margin-right: 1rem;
+            }
+        }
+
+        &.race-selection {
+            button {
+                width: 11rem;
+
+                &:first-of-type {
+                    border-top-right-radius: 0;
+                    border-bottom-right-radius: 0;
+                }
+
+                &:last-of-type {
+                    border-top-left-radius: 0;
+                    border-bottom-left-radius: 0;
+                }
+            }
+        }
+    }
+
+    &__content {
+        margin-top: 4rem;
+    }
+}

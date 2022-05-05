@@ -1,0 +1,247 @@
+@import "app/styles/mixins.scss";
+@import "app/styles/variables.scss";
+@import "app/styles/animations.scss";
+
+.side-navigation {
+    width: 6.6rem;
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    padding-top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    border-right: 1px solid #ededed;
+    @include animation(0, 0.8s, fadeIn, ease-in);
+    @include transition-1;
+
+    &__top-wrap {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.75rem;
+        border-bottom: 1px solid #ededed;
+        height: 6rem;
+    }
+
+    &.hide {
+        display: none;
+    }
+
+    &__membership-program {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background: $primary-color;
+        margin-bottom: 0;
+        font-size: 1.4rem;
+        line-height: 1.25rem;
+        color: #ffffff;
+        padding: 1rem 1.5rem;
+
+        @media (max-width: 600px) {
+            display: block;
+        }
+    }
+
+    @media (max-width: $lg) {
+        @include transition-1;
+        @include transform(translateX(-70px));
+
+        &.toggled {
+            @include transform(translateX(0));
+        }
+    }
+
+    &.toggled {
+        width: 24rem;
+    }
+
+    &__logo {
+        display: flex;
+        position: relative;
+        text-align: left;
+
+        &.toggled {
+            padding-top: 0.5rem;
+            padding-bottom: 0.9rem;
+        }
+
+        img {
+            image-rendering: crisp-edges;
+            image-rendering: -moz-crisp-edges;
+            image-rendering: -o-crisp-edges;
+            image-rendering: -webkit-optimize-contrast;
+            -ms-interpolation-mode: nearest-neighbor;
+            opacity: 0;
+            @include transition-1;
+
+            &.toggled {
+                opacity: 1;
+                width: 15.75rem;
+                @include transform(translateX(0));
+                @include transform(translateX(-100vw));
+            }
+
+            &.toggled-active {
+                @include transform(translateX(0));
+            }
+
+            &.not-toggled {
+                width: 5rem;
+                opacity: 1;
+                @include animation(0, 0.3s, slideIn, forwards);
+            }
+        }
+    }
+
+    &__close-sidenav {
+        background: none;
+        border: none;
+        color: $grey-400;
+        @include animation(0, 1s, sideNavigationLink);
+        cursor: pointer;
+
+        svg {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+
+    h5 {
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+        display: none;
+        text-transform: uppercase;
+
+        &.toggled {
+            opacity: 1;
+            margin: 2.5rem 0 0.5rem;
+            font-size: 1.1rem;
+            padding-left: 2rem;
+            color: $grey-400;
+            font-weight: 500;
+            display: block;
+            @include transition-1;
+        }
+    }
+
+    &__links-wrap {
+        margin-top: 2rem;
+
+        @media (max-width: $md) {
+            opacity: 0;
+        }
+
+        &.toggled {
+            opacity: 1;
+
+            a {
+                padding: 1.5rem 2rem;
+                display: block;
+                [data-sidespan="sidespan"] {
+                    visibility: visible;
+                    @include animation(0, 2s, sideNavigationLink);
+                }
+            }
+
+            img {
+                display: block;
+                margin-right: 2rem;
+                font-size: 1.8rem;
+                opacity: 0.8;
+
+                &.isToggled {
+                    display: inline-block;
+                }
+            }
+        }
+
+        ul {
+            padding-left: 0;
+
+            li {
+                @include transition-1;
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+                border-left: 3px solid transparent;
+                border-right: 3px solid transparent;
+                list-style-type: none;
+
+                &.notCurrent {
+                    opacity: 0.3;
+                    cursor: not-allowed;
+
+                    &:hover {
+                        background: transparent;
+                    }
+
+                    a {
+                        user-select: none;
+                        pointer-events: none;
+                    }
+                }
+
+                &:hover {
+                    background: $grey-200;
+
+                    a {
+                        color: $text-primary;
+
+                        &:hover {
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                &.nav-active {
+                    background: $grey-200;
+                    border-left: 3px solid $primary-color;
+
+                    a {
+                        color: $text-primary;
+                    }
+                }
+
+                a {
+                    color: $text-primary;
+                    font-weight: 300;
+                    padding: 2rem 1.5rem;
+                    margin-bottom: 0;
+                    text-align: center;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    @include transition-1;
+
+                    &.toggled {
+                        margin-bottom: 0;
+                        padding: 1rem 1.5rem;
+                        text-align: left;
+                        justify-content: flex-start;
+                        align-items: center;
+                        display: flex;
+                    }
+                }
+
+                img {
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+.sidespan {
+    display: none;
+    font-size: 1.5rem;
+
+    &.toggled {
+        display: inline-block;
+        @include animation(0, 0.5s, sideNavigationLink);
+    }
+}

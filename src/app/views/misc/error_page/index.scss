@@ -1,0 +1,238 @@
+@import "app/styles/mixins.scss";
+@import "app/styles/variables.scss";
+@import "app/styles/animations.scss";
+
+.error {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    @include animation(0, 1.5s, fadeIn, ease-in-out);
+
+    &__text-content {
+        text-align: center;
+    }
+
+    &__cta {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+
+        button {
+            margin: 0 20px;
+            padding: 20px 40px !important;
+            font-size: 16px;
+        }
+
+        @media (max-width: 480px) {
+            flex-direction: column;
+        }
+    }
+
+    &__span-divider {
+        display: inline-block;
+        font-size: 1.6rem;
+
+        @media (max-width: 480px) {
+            margin: 1.6rem 0;
+        }
+    }
+
+    .msg {
+        top: -22.5rem;
+        left: 3rem;
+        width: 8rem;
+        height: 8rem;
+        line-height: 8rem;
+        font-size: 3.2rem;
+        position: relative;
+        z-index: 9999;
+        display: block;
+        background: $text-medium;
+        color: #ffffff;
+        border-radius: 50%;
+        font-style: italic;
+    }
+
+    p {
+        font-size: 3rem;
+        color: $text-primary;
+        font-weight: 400;
+        letter-spacing: 0.15rem;
+        margin-top: -5rem;
+        margin-bottom: 1rem;
+
+        &:last-of-type {
+            margin-top: 0;
+            font-size: 2.45rem;
+            color: $text-medium;
+            letter-spacing: 0;
+            font-weight: 300;
+        }
+    }
+
+    .ground-color {
+        background: #ffffff;
+        width: 100%;
+        text-align: center;
+    }
+
+    .triangle {
+        content: "";
+        position: absolute;
+        z-index: 999;
+        width: 0;
+        height: 0;
+        @include transform(rotate(45deg));
+    }
+
+    span {
+        &.triangle {
+            top: 70%;
+            right: 0%;
+            border-left: 2rem solid $text-medium;
+            border-top: 1.5rem solid transparent;
+            border-bottom: 1.5rem solid transparent;
+        }
+    }
+
+    &.container-error-404 {
+        margin-top: 10%;
+        position: relative;
+        height: 25rem;
+        padding-top: 4rem;
+    }
+
+    .digit {
+        width: 15rem;
+        height: 15rem;
+        line-height: 15rem;
+        font-size: 12rem;
+        font-weight: bold;
+        position: relative;
+        top: 8%;
+        color: white;
+        background: $primary-color;
+        border-radius: 50%;
+        display: inline-block;
+        @include transform(skew(45deg));
+    }
+
+    .clip {
+        display: inline-block;
+        @include transform(skew(-45deg));
+
+        &:nth-of-type(2) {
+            .shadow {
+                width: 13rem;
+                overflow: hidden;
+                position: relative;
+                box-shadow: inset 20px 0px 20px -15px rgba(150, 150, 150, 0.5),
+                    20px 0px 20px -15px rgba(150, 150, 150, 0.4);
+            }
+
+            .digit {
+                left: -10%;
+            }
+        }
+
+        &:nth-of-type(1),
+        &:nth-of-type(3) {
+            .shadow {
+                width: 25rem;
+
+                &:after {
+                    content: "";
+                    position: absolute;
+                    right: -0.8rem;
+                    bottom: 0px;
+                    z-index: 9999;
+                    height: 100%;
+                    width: 1rem;
+                    background: linear-gradient(
+                        90deg,
+                        transparent,
+                        rgba(173, 173, 173, 0.8),
+                        transparent
+                    );
+                    @include border-radius(50%);
+                }
+            }
+        }
+
+        &:nth-of-type(1) {
+            .digit {
+                right: -20%;
+            }
+        }
+
+        &:nth-of-type(3) {
+            .shadow {
+                left: -0.8rem;
+
+                &:after {
+                    right: 6.5rem;
+                }
+            }
+
+            .digit {
+                left: -20%;
+            }
+        }
+
+        .shadow {
+            height: 18rem;
+            overflow: hidden;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .error .clip .shadow {
+            height: 100px;
+        }
+
+        .error .clip:nth-of-type(2) .shadow {
+            width: 80px;
+        }
+
+        .error .clip:nth-of-type(1) .shadow,
+        .error .clip:nth-of-type(3) .shadow {
+            width: 100px;
+        }
+
+        .error .digit {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 52px;
+        }
+
+        .error h2 {
+            font-size: 24px;
+        }
+        .error .msg {
+            top: -110px;
+            left: 15%;
+            width: 40px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 18px;
+        }
+
+        .error span.triangle {
+            top: 70%;
+            right: -3%;
+            border-left: 10px solid #535353;
+            border-top: 8px solid transparent;
+            border-bottom: 8px solid transparent;
+        }
+
+        .error .container-error-404 {
+            height: 150px;
+        }
+    }
+}

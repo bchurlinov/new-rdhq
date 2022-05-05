@@ -1,0 +1,152 @@
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+html {
+    padding: 0;
+    margin: 0;
+    min-height: 0;
+    min-width: 0;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 62.5%;
+    box-sizing: border-box;
+    font-size: 10px;
+    color: $text-primary;
+    text-rendering: optimizeSpeed;
+    background: #ffffff;
+    margin: 0;
+    padding: 0;
+    min-height: 0;
+    min-width: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 10px #e0e0e0;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2d2f32;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #d3d3d3;
+}
+
+// Chakra
+
+h1.chakra-heading {
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+    font-weight: 500;
+}
+
+h2.chakra-heading {
+    font-size: 2.2rem;
+    margin-bottom: 3rem;
+    font-weight: 400;
+}
+
+.chakra-input,
+.chakra-textarea {
+    padding: 1.75rem !important;
+    font-size: 1.4rem !important;
+    color: $text-primary;
+
+    &::placeholder {
+        font-size: 1.35rem !important;
+        color: #d3d3d3;
+    }
+
+    &:disabled {
+        background: #ededed;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 1px $primary-color !important;
+        border-color: $primary-color !important;
+    }
+}
+
+.chakra-alert {
+    top: 7rem;
+
+    &__title {
+        font-size: 1.55rem !important;
+    }
+
+    &__desc {
+        font-size: 1.5rem !important;
+        margin-right: 1rem;
+        text-align: center;
+    }
+}
+
+.chakra-heading {
+    color: $text-primary;
+}
+
+.chakra-text {
+    color: $text-primary;
+}
+
+.chakra-popover__header {
+    font-size: 1.35rem;
+    font-weight: 500;
+    color: $primary-color;
+}
+
+.chakra-popover__body {
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.chakra-popover__content {
+    &:focus {
+        outline: 0 !important;
+        box-shadow: none !important;
+    }
+}
+
+.chakra-popover__footer {
+    padding: 1rem !important;
+
+    button {
+        font-size: 1.2rem;
+        height: 2.5rem;
+
+        &:last-of-type {
+            background: $primary-color;
+        }
+    }
+}
+
+.chakra-popover__close-btn {
+    &:focus {
+        outline: 0 !important;
+        box-shadow: none !important;
+    }
+}

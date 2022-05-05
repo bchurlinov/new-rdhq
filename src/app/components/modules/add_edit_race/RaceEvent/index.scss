@@ -1,0 +1,286 @@
+@import "app/styles/variables.scss";
+@import "app/styles/mixins.scss";
+
+.events {
+    margin-top: 8em;
+
+    &__card {
+        width: 100%;
+        max-width: 100%;
+        position: relative;
+
+        @media (max-width: 1400px) {
+            width: 97%;
+            max-width: 97%;
+        }
+
+        @media (max-width: 1050px) {
+            width: 95%;
+            max-width: 95%;
+        }
+
+        @media (max-width: 768px) {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+
+    &__inputs-wrap {
+        display: flex;
+        flex-flow: row nowrap;
+        width: 100%;
+
+        @media (max-width: 768px) {
+            flex-flow: row wrap;
+            margin-bottom: 2em;
+            border-bottom: 1px solid $grey-350;
+            padding-bottom: 3em;
+            padding-top: 3em;
+
+            &:nth-child(1) {
+                padding-top: 0;
+            }
+        }
+    }
+
+    .chakra-form-control {
+        padding-right: 20px;
+
+        @media (max-width: 860px) {
+            padding-right: 8px;
+        }
+
+        label {
+            font-weight: 600;
+            margin-bottom: 0.7em;
+            display: block;
+            font-size: 1.2em;
+            user-select: none;
+            justify-self: center;
+        }
+
+        &:last-of-type {
+            padding-right: 0;
+        }
+    }
+
+    &__picker {
+        width: 100%;
+    }
+
+    &__number {
+        width: 100%;
+    }
+
+    &__time-picker {
+        width: 100%;
+    }
+
+    .chakra-button {
+        position: absolute;
+        top: 20px;
+        right: -45px;
+        background: indianred !important;
+        border: 1px solid indianred;
+        padding: 5px 6px;
+        text-align: center;
+        cursor: pointer;
+        @include border-radius(5px);
+        @include box-shadow();
+
+        .anticon {
+            color: white;
+            font-size: 2em;
+        }
+
+        &:active,
+        &:focus {
+            border: 1px solid indianred;
+            outline: none;
+        }
+
+        &:hover {
+            background: darken(indianred, 10%);
+        }
+
+        @media (max-width: 768px) {
+            right: 0;
+            bottom: 12px;
+            z-index: 10;
+            top: auto;
+        }
+    }
+}
+
+.eventinputs-event-name {
+    display: block;
+    width: 25%;
+    max-width: 25%;
+
+    @media (max-width: 860px) {
+        width: 33.333%;
+    }
+
+    @media (max-width: 768px) {
+        width: 33.333%;
+        max-width: 33.333%;
+        min-width: 33.333%;
+    }
+
+    @media (max-width: 480px) {
+        width: 50%;
+        max-width: 50%;
+        min-width: 50%;
+    }
+}
+
+.eventinputs-distance {
+    width: 15%;
+    max-width: 15%;
+
+    @media (max-width: 860px) {
+        width: 33.333%;
+    }
+
+    @media (max-width: 768px) {
+        width: 33.333%;
+        max-width: 33.333%;
+        min-width: 33.333%;
+        padding-right: 8px !important;
+    }
+
+    @media (max-width: 480px) {
+        width: 50%;
+        max-width: 50%;
+        min-width: 50%;
+        padding-right: 0 !important;
+    }
+}
+
+.eventinputs-unit {
+    width: 15%;
+    max-width: 15%;
+
+    @media (max-width: 860px) {
+        width: 33.333%;
+    }
+
+    @media (max-width: 768px) {
+        width: 33.333%;
+        max-width: 33.333%;
+        min-width: 33.333%;
+    }
+
+    @media (max-width: 479px) {
+        width: 50%;
+        max-width: 50%;
+        min-width: 50%;
+    }
+}
+
+.eventinputs-start-time {
+    width: 15%;
+    max-width: 15%;
+
+    input {
+        height: 35px;
+        width: 100% !important;
+        padding: 4px 11px;
+        color: #000000d9;
+        font-size: 14px;
+        line-height: 1.5715;
+        background-color: #fff;
+        background-image: none;
+        border: 1px solid;
+        border-color: inherit;
+        border-radius: 2px;
+        transition: all 0.3s;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+
+        &:focus {
+            outline: none;
+            outline: 0;
+            border-right-width: 1px !important;
+            border-color: #40a9ff;
+        }
+    }
+    &.hasError {
+        input {
+            border: 1px solid $error;
+            box-shadow: 0 0 0 1px $error;
+        }
+    }
+
+    @media (max-width: 860px) {
+        width: 33.333%;
+    }
+
+    @media (max-width: 768px) {
+        width: 33.333%;
+        max-width: 33.333%;
+        min-width: 33.333%;
+    }
+
+    @media (max-width: 479px) {
+        width: 50%;
+        max-width: 50%;
+        min-width: 50%;
+        padding-right: 0 !important;
+    }
+}
+
+.eventinputs-entry-fee {
+    width: 15%;
+    max-width: 15%;
+    position: relative;
+
+    .currency {
+        position: absolute;
+        z-index: 10;
+        left: 10px;
+        top: 2.2em;
+        font-size: 1.5em;
+    }
+
+    @media (max-width: 860px) {
+        width: 33.333%;
+    }
+
+    @media (max-width: 768px) {
+        width: 33.333%;
+        max-width: 33.333%;
+        min-width: 33.333%;
+    }
+
+    @media (max-width: 479px) {
+        width: 50%;
+        max-width: 50%;
+        min-width: 50%;
+        padding-right: 8px !important;
+    }
+}
+
+.eventinputs-participants {
+    width: 15%;
+    max-width: 15%;
+
+    @media (max-width: 860px) {
+        width: 33.333%;
+    }
+
+    @media (max-width: 768px) {
+        width: 33.333%;
+        max-width: 33.333%;
+        min-width: 33.333%;
+        padding-right: 8px !important;
+    }
+
+    @media (max-width: 480px) {
+        width: 50%;
+        max-width: 50%;
+        min-width: 50%;
+        padding-right: 0 !important;
+    }
+}

@@ -1,0 +1,92 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": true,
+        "jest": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "plugin:jsx-a11y/recommended"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "warnOnUnsupportedTypeScriptVersion": false,
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": 13,
+        "sourceType": "module"
+    },
+    "plugins": ["react", "@typescript-eslint", "react-hooks", "prettier"],
+    "rules": {
+        "indent": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn",
+        "import/prefer-default-export": "off",
+        "react/prop-types": "off",
+        "react/require-default-props": "off",
+        "no-shadow": "off",
+        "camelcase": "off",
+        "no-console": 1,
+        "@typescript-eslint/no-shadow": ["off"],
+        "no-use-before-define": "off",
+        "jsx-a11y/click-events-have-key-events": 0,
+        "react/react-in-jsx-scope": "off",
+        "react/forbid-prop-types": [0],
+        "@typescript-eslint/no-non-null-assertion": "off",
+        "quotes": ["error", "double"],
+        "@typescript-eslint/no-use-before-define": ["error"],
+        "react/jsx-filename-extension": ["warn", { "extensions": [".tsx"] }],
+        "react/function-component-definition": "off",
+        "import/no-named-as-default": [0],
+        "import/namespace": [2],
+        "no-mixed-operators": [0],
+        "prettier/prettier": [
+            "error",
+            {
+                "semi": true,
+                "trailingComma": "es5",
+                "singleQuote": false,
+                "printWidth": 100,
+                "tabWidth": 4,
+                "bracketSpacing": true,
+                "useTabs": false,
+                "endOfLine": "auto"
+            }
+        ],
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "no-param-reassign": [
+            "error",
+            {
+                "props": true,
+                "ignorePropertyModificationsFor": ["state", "config", "acc"]
+            }
+        ],
+        "comma-dangle": [
+            "error",
+            {
+                "arrays": "always-multiline",
+                "objects": "always-multiline",
+                "imports": "ignore",
+                "exports": "ignore",
+                "functions": "ignore"
+            }
+        ]
+    },
+    "settings": {
+        "import/resolver": {
+            "typescript": {}
+        }
+    }
+}

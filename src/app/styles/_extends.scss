@@ -1,0 +1,20 @@
+// Cards
+%card-header {
+    font-size: 1.7rem;
+    margin-bottom: 0.8rem;
+    font-weight: 600;
+}
+
+%card-sub-header {
+    font-size: 1.55rem;
+    margin-bottom: 1.85rem;
+    font-weight: 500;
+}
+
+%card-description {
+    font-size: 1.6rem;
+}
+
+%card-border {
+    border: 1px solid $grey-300;
+}

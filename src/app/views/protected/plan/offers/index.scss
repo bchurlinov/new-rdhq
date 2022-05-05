@@ -1,0 +1,100 @@
+@import "app/styles/variables.scss";
+@import "app/styles/mixins.scss";
+@import "app/styles/animations.scss";
+
+.vendor-offers {
+    @include animation(0, 0.8s, fadeIn, forwards);
+
+    &__container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top: 3.25rem;
+        gap: 2rem;
+        @include animation(0, 0.4s, fadeIn, forwards);
+
+        @media (max-width: $md) {
+            flex-direction: column;
+        }
+
+        .offer-card {
+            width: calc(33.333% - 1.4rem);
+
+            @media (max-width: 2000px) {
+                width: calc(50% - 1rem);
+            }
+
+            @media (max-width: $xxl) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__message {
+        text-align: center;
+    }
+
+    &__wrap {
+        width: 100%;
+        padding: 1rem;
+        height: auto;
+
+        @media (max-width: 12.5rem) {
+            height: auto;
+            width: 100%;
+        }
+
+        @media (max-width: $md) {
+            padding: 0;
+            margin-bottom: 2rem;
+        }
+    }
+
+    &__loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__instructions-modal {
+        a {
+            color: $primary-color;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+.vendor-offers-modal {
+    &__content {
+        margin-bottom: 2rem;
+    }
+
+    &__form-group {
+        margin-bottom: 2.65rem;
+    }
+
+    &__from-group-span-error {
+        color: $error;
+        display: block;
+        font-size: 1.2rem;
+        margin-top: 0.7rem;
+        margin-left: 2px;
+        line-height: 1.35;
+    }
+
+    &__instructions-mode {
+        h4 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__dialog {
+        @include animation(0, 0.5s, fadeIn, forwards);
+        margin-bottom: 2rem;
+    }
+}

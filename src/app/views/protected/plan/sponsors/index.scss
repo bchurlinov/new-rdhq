@@ -1,0 +1,62 @@
+@import "app/styles/variables.scss";
+@import "app/styles/mixins.scss";
+@import "app/styles/animations.scss";
+
+.sponsors {
+    width: 100%;
+    @include animation(0, 0.8s, fadeIn, ease-in);
+
+    &__content {
+        margin-top: 3.5rem;
+        @include animation(0, 0.8s, fadeIn, ease-in);
+
+        p {
+            font-weight: 600;
+            margin-bottom: 2rem;
+        }
+
+        &.isLoading {
+            opacity: 0.25;
+            user-select: none;
+            pointer-events: none;
+        }
+    }
+
+    &__content-wrap {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &__content-cards-wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        .sponsor-card {
+            width: calc(33.333% - 1.4rem);
+
+            @media (max-width: 2100px) {
+                width: calc(50% - 1rem);
+            }
+
+            @media (max-width: 1500px) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__no-sponsors-content {
+        margin-top: 3.5rem;
+    }
+
+    &__more-results {
+        margin-top: 2rem;
+    }
+
+    &__error {
+        margin-top: 3.5rem;
+    }
+}

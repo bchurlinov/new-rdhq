@@ -1,0 +1,10 @@
+.page-with-loader {
+    &__skeleton-wrap {
+        border-bottom: 1px solid #ededed;
+        padding: 2.5rem 0;
+
+        .chakra-skeleton__group {
+            margin-bottom: 3.5rem;
+        }
+    }
+}

@@ -1,0 +1,261 @@
+@import "app/styles/variables.scss";
+@import "app/styles/mixins.scss";
+
+.auth {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include animation(0, 0.5s, fadeIn, ease-in-out);
+
+    &__linking {
+        font-size: 1.6rem;
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+
+.auth-container {
+    max-width: 43.5rem;
+    width: 100%;
+
+    @media (max-width: $md) {
+        padding: 1.5rem;
+    }
+}
+
+.auth-wrap {
+    display: flex;
+    margin: 0 auto;
+    flex-flow: column wrap;
+    border: 1px solid #ededed;
+    background: #ffffff;
+    padding: 2rem 1.5rem 2.35rem;
+    @include box-shadow();
+    @include border-radius(5px);
+
+    .dialog-wrap {
+        margin-bottom: 2.5rem;
+    }
+
+    &__content {
+        padding: 2.5rem 2.5rem 1rem;
+
+        @media (max-width: $sm) {
+            padding: 2rem 1rem 3rem;
+        }
+    }
+
+    &__text {
+        margin-bottom: 2.5rem;
+    }
+
+    &__header {
+        text-align: center;
+        padding: 0 5rem 0;
+        position: relative;
+        -webkit-border-top-left-radius: 5px;
+        -moz-border-top-left-radius: 5px;
+        border-top-left-radius: 5px;
+        -webkit-border-top-right-radius: 5px;
+        -webkit-border-top-right-radius: 5px;
+        border-top-right-radius: 5px;
+
+        p {
+            color: #ffffff;
+            font-weight: 100;
+            font-size: 1.5rem;
+            padding-bottom: 1.5rem;
+
+            &:last-of-type {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    &__divider {
+        text-align: center;
+        margin: 2.75rem 0;
+
+        p {
+            font-size: 1.3rem;
+            opacity: 0.6;
+            position: relative;
+            margin-bottom: 0;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: 25%;
+                background: #a8a8a8;
+                left: 0;
+                top: 50%;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: 25%;
+                background: #a8a8a8;
+                right: 0;
+                top: 50%;
+            }
+        }
+    }
+
+    &__logo {
+        width: 10rem;
+        height: 6rem;
+        text-align: center;
+        background: #ffffff;
+        z-index: 99;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include border-radius(50%);
+
+        img {
+            width: 6rem;
+            height: auto;
+        }
+    }
+
+    &__form-group {
+        margin-bottom: 2.65rem;
+        position: relative;
+
+        &--submit {
+            text-align: right;
+            margin-top: 3rem;
+            margin-bottom: 0.5rem;
+
+            .isLoading {
+                opacity: 0.5;
+            }
+
+            button {
+                width: 100%;
+            }
+        }
+    }
+
+    &__social-group {
+        margin-bottom: 1.5rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__form-errors {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        padding: 0.6rem;
+        background: #f8d7da;
+        border: 1px solid #f5c6cb;
+        color: $error;
+        @include border-radius(4px);
+        @include box-shadow();
+
+        p {
+            margin-bottom: 0;
+            font-size: 1.5em;
+        }
+    }
+
+    &__form-success {
+        text-align: center;
+        margin-bottom: 2.5rem;
+        padding: 0.6rem;
+        background: #d4edda;
+        border: 1px solid #c3e6cb;
+        color: $success;
+        @include border-radius(4px);
+        @include box-shadow();
+
+        p {
+            margin-bottom: 0;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__span-error {
+        color: $error;
+        display: block;
+        font-size: 1.2rem;
+        margin-top: 0.7rem;
+        margin-left: 2px;
+        line-height: 1.35;
+    }
+
+    &__password-label-wrap {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            &:last-of-type {
+                a {
+                    font-weight: 500;
+                    text-decoration: underline;
+                    font-size: inherit;
+                    @include transition-1;
+
+                    &:hover {
+                        color: $primary-hover;
+                    }
+                }
+
+                svg {
+                    display: inline-block;
+                    margin-right: 0.75rem;
+                    position: relative;
+                    top: -2px;
+                    font-size: 1.35rem;
+                }
+            }
+        }
+    }
+
+    &__auth-status {
+        font-size: 0.8rem;
+        text-align: left;
+        margin-bottom: 2rem;
+
+        p {
+            font-weight: 400;
+            font-size: 1.45rem;
+            margin-bottom: 0;
+        }
+
+        a {
+            color: $primary-color;
+            display: inline-block;
+            margin-left: 0.5rem;
+            font-size: inherit;
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            @media (max-width: 350px) {
+                display: block;
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+        }
+    }
+}
+
+.password-icon {
+    height: 100% !important;
+
+    svg {
+        width: 1.7rem;
+        height: 1.7rem;
+        color: $text-primary;
+        cursor: pointer;
+    }
+}

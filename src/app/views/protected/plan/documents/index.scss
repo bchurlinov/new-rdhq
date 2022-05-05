@@ -1,0 +1,75 @@
+@import "app/styles/animations.scss";
+@import "app/styles/variables.scss";
+@import "app/styles/mixins.scss";
+
+.documents-templates {
+    @include animation(0, 0.8s, fadeIn, ease-in);
+
+    &__group {
+        margin-bottom: 7.5rem;
+
+        &:last-of-type {
+            margin-bottom: 0;
+        }
+    }
+
+    &__container {
+        display: flex;
+        flex-flow: row wrap;
+        margin-top: 3.5rem;
+    }
+
+    &__group-wrap {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-auto-rows: 1fr;
+        column-gap: 3.5em;
+        row-gap: 3.5em;
+
+        @media (max-width: 2400px) {
+            grid-template-columns: repeat(5, 1fr);
+            column-gap: 2em;
+            row-gap: 2em;
+
+            .documents-templates-card__image {
+                height: 17rem;
+            }
+        }
+
+        @media (max-width: 2000px) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+
+        @media (max-width: 1600px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media (max-width: $xl) {
+            grid-template-columns: repeat(2, 1fr);
+            column-gap: 3rem;
+            row-gap: 3rem;
+        }
+
+        @media (max-width: $lg) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media (max-width: $md) {
+            grid-template-columns: repeat(1, 1fr);
+        }
+
+        @media (max-width: $sm) {
+            padding: 0;
+        }
+    }
+
+    &__message {
+        text-align: left;
+    }
+
+    &__loader {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

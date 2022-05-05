@@ -1,0 +1,112 @@
+@import "app/styles/variables.scss";
+@import "app/styles/animations.scss";
+@import "app/styles/mixins.scss";
+
+.account {
+   display: flex;
+   flex-direction: column;
+   gap: 2rem;
+   @include animation(0, 0.8s, fadeIn, ease-in-out);
+
+   &__wrap {
+      h4 {
+         margin-bottom: 2rem;
+      }
+
+      a {
+         color: $primary-color;
+
+         &:hover {
+            text-decoration: underline;
+         }
+
+         @media (max-width: $md) {
+            font-size: 1.5rem;
+         }
+
+         @media (max-width: $sm) {
+            font-size: 1.4rem;
+         }
+      }
+   }
+
+   &__anchor-wrap {
+      margin: 4rem 0 4rem;
+
+      @media (max-width: $lg) {
+         padding: 2rem 0;
+      }
+   }
+
+   &__loading {
+      display: inline-block;
+
+      &:after {
+         overflow: hidden;
+         display: inline-block;
+         vertical-align: bottom;
+         -webkit-animation: ellipsis steps(5, end) 900ms infinite;
+         -moz-animation: ellipsis steps(5, end) 900ms infinite;
+         animation: ellipsis steps(5, end) 900ms infinite;
+         content: "\2026";
+         width: 0px;
+      }
+   }
+}
+
+.account-info-wrap {
+   display: flex;
+   flex-direction: row;
+   text-align: left;
+   width: 100%;
+   max-width: 75rem;
+   margin-bottom: 1.25rem;
+
+   &__item {
+      &.first {
+         width: 45%;
+         text-align: left;
+
+         @media (max-width: $lg) {
+            width: 55%;
+         }
+      }
+
+      &.last {
+         width: 55%;
+         text-align: left;
+         padding-left: 5rem;
+
+         @media (max-width: $lg) {
+            width: 45%;
+            text-align: right;
+            padding-left: 0;
+         }
+      }
+
+      p {
+         @media (max-width: $sm) {
+            font-size: 1.5rem;
+
+            a {
+               font-size: 1.5rem;
+            }
+         }
+
+         @media (max-width: $sm) {
+            font-size: 1.4rem;
+
+            a {
+               font-size: 1.4rem;
+            }
+         }
+      }
+   }
+
+   @media (max-width: $lg) {
+      width: 100%;
+      max-width: 100%;
+      border-bottom: 1px solid #ededed;
+      padding: 1.5rem 0;
+   }
+}

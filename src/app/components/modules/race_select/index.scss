@@ -1,0 +1,22 @@
+@import "app/styles/variables.scss";
+
+.top-navbar {
+    &__race-select-wrap {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        &.isLoading {
+            display: block;
+        }
+    }
+
+    @media (max-width: $lg) {
+        .rdhq-select {
+            .options {
+                top: -16rem;
+            }
+        }
+    }
+}

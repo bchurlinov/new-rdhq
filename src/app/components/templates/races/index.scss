@@ -1,0 +1,51 @@
+@import "app/styles/variables.scss";
+@import "app/styles/animations.scss";
+@import "app/styles/mixins.scss";
+@import "app/styles/pagination.scss";
+
+.races {
+    &__inner-wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+        @include animation(0, 0.8s, fadeIn, ease-in);
+
+        .race-card {
+            width: calc(33.333% - 1.4rem);
+
+            @media (max-width: 2100px) {
+                width: calc(50% - 1rem);
+            }
+
+            @media (max-width: 1500px) {
+                width: 100%;
+            }
+        }
+
+        &.isLoading {
+            opacity: 0.35;
+            user-select: none;
+            pointer-events: none;
+        }
+    }
+
+    &__empty-message {
+        margin-top: 5rem;
+        @include animation(0, 0.5s, fadeIn, ease-in);
+
+        p {
+            text-align: center;
+            margin-bottom: 1.35rem;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__pagination {
+        margin-top: 5em;
+        text-align: center;
+    }
+}

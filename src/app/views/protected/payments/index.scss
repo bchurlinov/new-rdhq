@@ -1,0 +1,16 @@
+@import "app/styles/variables.scss";
+@import "app/styles/mixins.scss";
+@import "app/styles/animations.scss";
+
+.payments {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    @include animation(0, 0.8s, fadeIn, ease-in);
+
+    h1 {
+        margin-bottom: 0;
+    }
+}

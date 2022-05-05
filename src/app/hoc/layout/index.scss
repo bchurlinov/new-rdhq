@@ -1,0 +1,40 @@
+@import "app/styles/variables.scss";
+@import "app/styles/mixins.scss";
+
+.layout {
+    overflow: auto;
+    background: #ffffff;
+    @include transition-1;
+
+    &.toggled {
+        @media (max-width: 992px) {
+        }
+    }
+
+    @media (max-width: $lg) {
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
+    }
+
+    @media (max-width: $md) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+.main-content {
+    padding: 10.5rem 3.5rem 10.5rem 10rem;
+    @include transition-1;
+
+    @media (max-width: $lg) {
+        padding: 10.5rem 1rem 10.5rem 1rem;
+    }
+
+    &.isToggled {
+        margin-left: 17.5rem;
+        @media (max-width: $lg) {
+            margin-left: 24rem;
+            margin-right: -24rem;
+        }
+    }
+}

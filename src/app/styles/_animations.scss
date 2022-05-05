@@ -1,0 +1,54 @@
+// Fade In
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+// Side Navigation
+@keyframes sideNavigationLink {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+        display: inline-block !important;
+    }
+}
+
+// Ellipsis
+@keyframes ellipsis {
+    to {
+        width: 2rem;
+    }
+}
+
+@-webkit-keyframes ellipsis {
+    to {
+        width: 2rem;
+    }
+}
+
+// Card animations
+@keyframes cardEnterAnimation {
+    from {
+        transform: translateY(1.5rem);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+// Zoom in
+@keyframes slideIn {
+    from {
+        transform: translateX(-100vw);
+    }
+    to {
+        transform: translateX(0);
+    }
+}

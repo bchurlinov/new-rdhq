@@ -1,0 +1,35 @@
+@import "app/styles/mixins.scss";
+
+.facebook-auth {
+    box-shadow: none !important;
+    outline: none !important;
+    font-size: 15px !important;
+    height: 38px !important;
+    border: 1px solid #d9d9d9 !important;
+    border-radius: 5px !important;
+    display: block;
+    width: 100% !important;
+    text-align: center;
+    background: #ffffff;
+    color: #4285f4;
+    cursor: pointer;
+    @include transition-2;
+
+    i {
+        color: #4285f4;
+        display: inline-block;
+        margin-right: 20px;
+    }
+
+    &:hover {
+        color: darken(#4285f4, 20%);
+
+        i {
+            color: darken(#4285f4, 20%);
+        }
+    }
+
+    div {
+        background: transparent !important;
+    }
+}

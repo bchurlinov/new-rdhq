@@ -1,0 +1,183 @@
+@import "app/styles/variables.scss";
+@import "app/styles/mixins.scss";
+@import "app/styles/animations.scss";
+
+.race-marketer {
+    h4 {
+        font-weight: 600;
+        font-size: 1.75rem;
+    }
+
+    &__report {
+        margin: 6rem 0;
+        @include animation(0, 0.8s, fadeIn, ease-in);
+    }
+
+    &__listings-wrap {
+        margin-top: 2rem;
+    }
+
+    &__listing-list {
+        padding-left: 0rem;
+    }
+
+    &__listing-list-item {
+        display: flex;
+        flex-direction: row;
+        gap: 14rem;
+        text-align: left;
+        padding-bottom: 1rem;
+        padding-top: 1rem;
+        align-items: center;
+
+        &:first-of-type {
+            padding-top: 0;
+        }
+
+        @media (max-width: $lg) {
+            justify-content: space-between;
+            gap: initial;
+            border-bottom: 1px solid $grey-250;
+        }
+
+        img {
+            display: inline-block;
+            margin-right: 1rem;
+            border: 1px solid $grey-250;
+            object-fit: contain;
+            width: 2.5rem;
+            height: 2.5rem;
+            vertical-align: middle;
+            opacity: 0;
+            @include transition-3;
+            @include border-radius(0.5rem);
+
+            &.hasLoaded {
+                opacity: 1;
+            }
+        }
+
+        svg {
+            display: inline-block;
+            width: 2.5rem;
+            height: 2.5rem;
+            margin-right: 1rem;
+            border: 1px solid $grey-250;
+            opacity: 0.5;
+            @include transition-3;
+            @include border-radius(0.5rem);
+        }
+
+        span {
+            font-weight: 400;
+
+            &:first-of-type {
+                width: 35%;
+
+                &:last-of-type {
+                    margin-bottom: 0;
+                }
+
+                @media (max-width: $lg) {
+                    width: 50%;
+                    display: flex;
+                    align-items: center;
+                }
+            }
+
+            &:last-of-type {
+                color: $primary-color;
+                @include transition-1-5;
+
+                svg {
+                    color: $primary-color;
+                    font-size: 1.85rem;
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin-left: 1rem;
+                    position: relative;
+                    top: -0.2rem;
+                    @include transition-1-5;
+                }
+
+                &:hover {
+                    svg {
+                        color: $primary-hover;
+                    }
+                }
+
+                @media (max-width: $lg) {
+                    width: 50%;
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+    &__draft-content {
+        background: $grey-200;
+        width: 100%;
+        max-width: 75rem;
+        padding: 2.5rem;
+        margin-top: 5rem;
+        border: 1px solid $grey-250;
+        @include box-shadow-light;
+        @include border-radius(0.5rem);
+
+        @media (max-width: $lg) {
+            max-width: 100%;
+        }
+    }
+
+    &__pending-completed-content {
+        margin-top: 4rem;
+    }
+
+    &__draft-report-form {
+        margin-top: 3rem;
+    }
+
+    &__draft-report-form-wrap {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+
+    &__draft-report-from-group {
+        width: calc(33.333% - 1.35rem);
+        display: flex;
+        flex-direction: column;
+
+        input {
+            background: #ffffff;
+        }
+
+        &:last-of-type {
+            align-self: center;
+            position: relative;
+            top: 1rem;
+
+            @media (max-width: $sm) {
+                margin-bottom: 2rem;
+            }
+        }
+
+        @media (max-width: $md) {
+            width: calc(50% - 1rem);
+        }
+
+        @media (max-width: $sm) {
+            width: 100%;
+        }
+    }
+
+    &__span-error {
+        color: $error;
+        display: block;
+        font-size: 1.2rem;
+        margin-top: 0.7rem;
+        margin-left: 2px;
+        line-height: 1.35;
+    }
+}
